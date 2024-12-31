@@ -167,12 +167,16 @@
   }
   
   .about-review blockquote {
-    font-size: 1.5rem;
-    font-style: italic;
+    
     margin: 40px 0; /* Adds space around the quote text */
     color: #555;
     line-height: 1.6; /* Improves readability */
     position: relative; 
+  }
+  .about-review blockquote p{
+    font-size: 1.1rem;
+    line-height: 2;
+    /* font-style: italic; */
   }
   
   .about-author {
@@ -315,6 +319,9 @@
   .about-image img:first-child {
     display: block; /* Show 1.JPG */
   }
+  /* .about-review blockquote p{
+    text-align: justify;
+  } */
 
   .about-image img:last-child {
     display: none; /* Hide 3.JPG */
