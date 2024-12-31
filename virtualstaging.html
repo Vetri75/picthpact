@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +10,20 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="modules/css/main.css">
     <link rel="stylesheet" href="modules/css/ourserices.css">
-    <!-- Include jQuery -->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="modules/css/index.css"> <!-- Update this with the actual CSS path -->
+    <link rel="stylesheet" href="modules/css/index.css">
 
-    <!-- Plugin JS -->
-    <script src="modules/js/jquery.anyimagecomparisonslider.min.js"></script> <!-- Update this with the actual JS path -->
+
+    <script src="modules/js/jquery.anyimagecomparisonslider.min.js"></script>
     <title>Document</title>
 </head>
+
 <body>
 
 
+    <!-- Header Section -->
     <header class="header-sec">
 
         <div class="header-content">
@@ -30,8 +32,8 @@
                 <span class="material-symbols-outlined" aria-label="Toggle Sidebar"
                     onclick="toggleLeftBar()">drag_handle</span>
             </div>
-            <div>
-                <img src="assets/logo.png" alt="Logo">
+            <div class="logo-aw">
+                <a href="index.html"><img src="assets/TPP Logo.png"></a>
             </div>
             <div>
                 <span class="material-symbols-outlined" onclick="toggleMenu()">menu</span>
@@ -40,6 +42,7 @@
         </div>
 
     </header>
+
 
     <!-- Navigation Sidebar -->
     <div class="left-bar-sec">
@@ -52,21 +55,27 @@
 
             <div class="quote-side">
 
-                <h1 class="head-ing">DotPic infotect</h1>
-                <p>Incepted in the year 2013, DotPic infotech(P) Ltd. Is widely known amongst the recognized service
-                    provider of highest quality Photo Editing Services, Manipulation Services, etc. ​</p>
+                <h1 class="head-ing">The Picture Patch</h1>
+                <p style="text-align: justify;">In the year 2019, The Picture Pitch became widely recognized as a
+                    leading service provider specializing in high-quality Photo Editing, Manipulation, and other related
+                    services. We pride ourselves on delivering creative and precise image transformations that meet the
+                    highest standards of excellence. ​</p>
 
             </div>
 
             <div class="latest-photos">
                 <h3 class="head-ing">Latest Photos</h3>
                 <div class="photo-gallery">
-                    <a href=""><img src="assets/4.JPG" alt="Photo 1"></a>
-                    <a href=""><img src="assets/4.JPG" alt="Photo 2"></a>
-                    <a href=""><img src="assets/4.JPG" alt="Photo 3"></a>
-                    <a href=""><img src="assets/4.JPG" alt="Photo 4"></a>
-                    <a href=""><img src="assets/4.JPG" alt="Photo 5"></a>
-                    <a href=""><img src="assets/4.JPG" alt="Photo 6"></a>
+                    <a href="gallery.html?category=hdr"><img src="assets/HDR/DY4A4216-l.jpg" alt="Photo 1"></a>
+                    <a href="gallery.html?category=twilight"><img src="assets/Twilight/DY4A8001-l.jpg"
+                            alt="Photo 2"></a>
+                    <a href="gallery.html?category=virtual-staging"><img src="assets/Virtual Staging/DY4A9565-1-l.jpg"
+                            alt="Photo 3"></a>
+                    <a href="gallery.html?category=virtual-renovation"><img
+                            src="assets/Virtual Renovation/DY4A9580-1-L.jpg" alt="Photo 4"></a>
+                    <a href="gallery.html?category=item-removal"><img src="assets/Item Removal/IMG_0077-2-l.jpg"
+                            alt="Photo 5"></a>
+                    <!-- <a href=""><img src="assets/4.JPG" alt="Photo 6"></a> -->
                 </div>
             </div>
 
@@ -77,12 +86,13 @@
             <div class="contact-section">
                 <h3 class="head-ing">Contact Us</h3>
                 <p>
-                    <span>Address:</span> 123 Main Street, City, Country <br>
-                    <span class="ph-le">Phone:</span> (+91) 7305137521, <br>
-                <p class="phone-sec">(+91) 7305137521</p>
-                <span class="em-side">Email:</span> <a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a>
+                    <span>Address:</span>Tamilnadu - India. <br>
+                    <span class="ph-le">Phone:</span> (+91) 9715210210, <br>
+                <p class="phone-sec">(+91) 6383125089</p>
+                <span class="em-side">Email:</span> <a
+                    href="mailto:thepicturepatch0424@gmail.com">thepicturepatch0424@gmail.com</a>
                 </p>
-                <a href="" class="contact-button">Get in Touch</a>
+                <a href="contact.html" class="contact-button">Get in Touch</a>
             </div>
         </div>
         <div class="cop-right-side">
@@ -112,56 +122,62 @@
     </div>
 
 
-    
+    <!-- Image Comparison Slider -->
     <section class="main-yop">
         <h1 class="head-ing ">VIRTUAL STAGING</h1>
         <div class="main-view">
-            <!-- Image Comparison Slider -->
+
             <div id="example" class="aics-autostart" data-orientation="horizontal" data-width="100%"
                 data-background-color="none" data-dividing-line="solid 1px rgba(255, 255, 255, .5)"
                 data-cursor="ew-resize">
                 <div class="images">
                     <div class="image-rgt" data-src="assets/Virtual Staging/IMG_0144-1.jpg"></div>
-                    <!-- Update with 'before' image path -->
+
                     <div class="image-lft" data-src="assets/Virtual Staging/IMG_0144.jpg"></div>
-                    <!-- Update with 'after' image path -->
+
                 </div>
                 <div class="ui">
-                    <!-- Optional labels -->
+
                     <a class="button-rgt" alt="Before">After</a>
                     <a class="button-lft" alt="After">Before</a>
-                    <p class="bot-um">Virtual Staging $32</p>
+                    <p class="bot-um">Virtual Staging $15USD</p>
                     <p class="int-asw"><span>Int : </span>For a better preview, click the Before or After button.</p>
-                    <!-- Optional drag handle -->
-                    <!-- <img class="dragger" src="dragger-h.png" alt="Handle" width="30" height="30"> -->
-                    <!-- Update with dragger image path -->
+
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Some Contents -->
+    <!-- VirtualStaging Some Contents -->
 
     <section class="vir-main explain-hdr">
         <div class="vir-in">
             <div class="vir-in-f">
                 <h3>Photoshop Home Staging:</h3>
-                <p>Virtual Staging has emerged as a formidable technological advancement in Home Staging techniques and a cost-effective alternative to the traditional staging of vacant homes.</p>
-                <p>As the pioneers of this new Virtual Staging movement, the founders and professionals of Virtually Staging PropertiesSM have developed an exclusive, Patent-Pending virtual staging process.</p>
-                <p>Our process allows us to use real furnishings and decor to virtually staged photos of vacant homes, producing exceptionally life-like virtually staged photos for clients all around the country.</p>
-            
+                <p>Virtual Staging has emerged as a formidable technological advancement in Home Staging techniques and
+                    a cost-effective alternative to the traditional staging of vacant homes.</p>
+                <p>As the pioneers of this new Virtual Staging movement, the founders and professionals of Virtually
+                    Staging PropertiesSM have developed an exclusive, Patent-Pending virtual staging process.</p>
+                <p>Our process allows us to use real furnishings and decor to virtually staged photos of vacant homes,
+                    producing exceptionally life-like virtually staged photos for clients all around the country.</p>
+
             </div>
             <div class="vir-in-f">
                 <h3>Our importance:</h3>
-                <p>Because 85% of potential home buyers say that the photos are the most important factor when viewing a home online.</p>
-                <p>Virtually staged photos that don’t look realistic actually do more harm than good in the sale process.</p>
-                <p>A poorly executed virtual staging, with oddly oriented, disproportionate, and unrealistic furnishings serves only to distract the online viewer, causing them to reject the premise of actually living in the home, replacing it with a chuckle and a keystroke to move on to the next property.</p>
-                <p>Our virtual staging process provides a realism that draws a buyer’s attention online, not pushes them away.</p>
-            
+                <p>Because 85% of potential home buyers say that the photos are the most important factor when viewing a
+                    home online.</p>
+                <p>Virtually staged photos that don’t look realistic actually do more harm than good in the sale
+                    process.</p>
+                <p>A poorly executed virtual staging, with oddly oriented, disproportionate, and unrealistic furnishings
+                    serves only to distract the online viewer, causing them to reject the premise of actually living in
+                    the home, replacing it with a chuckle and a keystroke to move on to the next property.</p>
+                <p>Our virtual staging process provides a realism that draws a buyer’s attention online, not pushes them
+                    away.</p>
+
             </div>
         </div>
-        <div class="last-con">Note: Send your trial images to our Virtual Staging team and get a free test Virtual Staging service from us.</div>
-        
+        <div class="last-con">Note: Send your trial images to our team and get a free test service from us.</div>
+
     </section>
 
 
@@ -172,16 +188,18 @@
             <div>
                 <div class="bott-um">
                     <div class="faq-question">
-                        <span>Can I really get my virtually staged rooms in 48 hours?
+                        <span>Can I really get my virtually staged rooms in 24 hours?
 
                         </span>
                         <span class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></span>
                     </div>
                     <div class="faq-answer">
                         <p>
-                            Yes. We have a global team of virtual staging gurus working 24 hours, 7 days a week to deliver your photos on time. Please allow additional time for larger jobs of ten images or more.
+                            Yes. We have a global team of virtual staging gurus working 24 hours, 7 days a week to
+                            deliver your photos on time. Please allow additional time for larger jobs of ten images or
+                            more.
                         </p>
-                        
+
                     </div>
                 </div>
                 <div class="bott-um">
@@ -192,7 +210,8 @@
                     </div>
                     <div class="faq-answer">
                         <p>
-                            Absolutely. Our expert team of virtual staging gurus will match or choose the best furniture for the room provided using the most advanced 3D modelling software.
+                            Absolutely. Our expert team of virtual staging gurus will match or choose the best furniture
+                            for the room provided using the most advanced 3D modelling software.
                         </p>
                     </div>
                 </div>
@@ -204,7 +223,11 @@
                     </div>
                     <div class="faq-answer">
                         <p>
-                            Easy! If you would like anything changed to your virtually staged image, within two months, we will rework for you at no cost. We do request that you submit reworks within two months of the original job. After this timeframe, any reworks will need to be submitted as a new job. Similarly, if you wish to change the image or angle being staged, this is classified as a new job and not a rework.
+                            Easy! If you would like anything changed to your virtually staged image, within two months,
+                            we will rework for you at no cost. We do request that you submit reworks within two months
+                            of the original job. After this timeframe, any reworks will need to be submitted as a new
+                            job. Similarly, if you wish to change the image or angle being staged, this is classified as
+                            a new job and not a rework.
                         </p>
                     </div>
                 </div>
@@ -216,7 +239,8 @@
                     </div>
                     <div class="faq-answer">
                         <p>
-                            Sorry, there are no volume discounts available. We operate on high volume and low margins and offer the same low price to all customers.
+                            Sorry, there are no volume discounts available. We operate on high volume and low margins
+                            and offer the same low price to all customers.
                         </p>
                     </div>
                 </div>
@@ -227,9 +251,11 @@
                         <span class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></span>
                     </div>
                     <div class="faq-answer">
-                       <p>
-                        We do our best to match the style of furniture selected, but cannot guarantee exact furniture pieces. To achieve the look you want, providing sample/reference images can help ensure we hit the mark with your virtually staged image.
-                       </p>
+                        <p>
+                            We do our best to match the style of furniture selected, but cannot guarantee exact
+                            furniture pieces. To achieve the look you want, providing sample/reference images can help
+                            ensure we hit the mark with your virtually staged image.
+                        </p>
                     </div>
                 </div>
                 <div class="bott-um">
@@ -240,7 +266,8 @@
                     </div>
                     <div class="faq-answer">
                         <p>
-                            Virtual Staging is for the addition of furniture and accessories only. For any physical changes to the property including adding fixtures, changing flooring, adding landscaping or any form of renovations, please use our<a href="virtualrenovation.html"> Virtual Renovation</a> product
+                            Virtual Staging is for the addition of furniture and accessories only. For any physical
+                            changes to the property including adding fixtures, changing flooring, adding landscaping.
                         </p>
                     </div>
                 </div>
@@ -252,7 +279,9 @@
                     </div>
                     <div class="faq-answer">
                         <p>
-                            As a default, we do not add these items unless specifically asked. Our design gurus will be more than happy to add these items, however we do not guarantee to add an exact replica shown in a reference image you provide. If you would like the exact style, please look at our<a href="virtualrenovation.html"> Virtual Renovation</a> services.
+                            As a default, we do not add these items unless specifically asked. Our design gurus will be
+                            more than happy to add these items, however we do not guarantee to add an exact replica
+                            shown in a reference image you provide.
                         </p>
                     </div>
                 </div>
@@ -264,7 +293,8 @@
                     </div>
                     <div class="faq-answer">
                         <p>
-                            After we finish your edits, we will store them for a minimum of 90 days. To ensure you have a lasting copy, kindly download and save the files to your own system.
+                            After we finish your edits, we will store them for a minimum of 90 days. To ensure you have
+                            a lasting copy, kindly download and save the files to your own system.
                         </p>
                     </div>
                 </div>
@@ -274,38 +304,57 @@
     </section>
 
 
+    <!-- Arrow Up/Down Button -->
+    <div id="arrow-up-btn" class="arrow-up">
+        <span class="material-symbols-outlined arrow-up-h">arrow_drop_up</span>
+    </div>
+
+    <!-- Social Icons -->
+    <div id="social-icons" class="social-icons hidden">
+        <a href="https://www.instagram.com/realestate__photo_editor?igsh=ZWJoam42OHo0b3Jl" target="_blank"
+            class="icon instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/9715210210?text=Recently%20I%20saw%20your%20website%20about%20your%20service.%20Let%20me%20know%20more%20about%20your%20services."
+            target="_blank" class="icon whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+
 
     <!-- Footer Section -->
     <footer>
         <div class="foot-ins-a">
             <div class="foot-f">
-                <h3 class="foot-fis">DotPic Infotech</h3>
+                <h3 class="foot-fis head-ingg">The Picture Patch</h3>
                 <p>
-                    Incepted in the year 2013, DotPic Infotech(P) Ltd. is widely known
-                    amongst the recognized service providers of the highest quality
-                    Photo Editing Services, Manipulation Services, etc.
+                    In the year 2019, The Picture Pitch became widely recognized as a leading service provider
+                    specializing in high-quality Photo Editing, Manipulation, and other related services. We pride
+                    ourselves on delivering creative and precise image transformations that meet the highest standards
+                    of excellence.
                 </p>
             </div>
             <div class="foot-f logo-container">
-                <img src="assets/logo.png" alt="DotPic Infotech Logo" class="footer-logo">
+                <img src="assets/TPP Logo.png" alt="The Picture Patch Logo" class="footer-logo">
             </div>
             <div class="foot-f">
-                <h3 class="foot-hed">Contacts</h3>
+                <h3 class="foot-hed head-ingg">Contacts</h3>
                 <div class="foot-num">
-                    <div><span>Phone: </span>7305137521</div>
-                    <div class="mar-left-n">7305137521</div>
-                    <div class="mar-left-n">7305137521</div>
+                    <div><span>Phone: </span>(+91) 9715210210</div>
+                    <div class="mar-left-n">(+91) 6383125089</div>
+
                 </div>
                 <div class="foot-num">
-                    <span>Email: </span><a href="mailto:kvetri137@gmail.com">kvetri137@gmail.com</a>
+                    <span>Email: </span><a href="mailto:thepicturepatch0424@gmail.com">thepicturepatch0424@gmail.com</a>
                 </div>
-                <p class="cop-right">&copy; 2020 DotPic Infotech. All Rights Reserved.</p>
+                <p class="cop-right">&copy; 2020 The Picture Patch. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
 
+    <!-- Scripts -->
     <script src="modules/js/main.js"></script>
     <script src="modules/js/ourservices.js"></script>
 </body>
+
 </html>

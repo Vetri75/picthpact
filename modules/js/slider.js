@@ -1,38 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
     const words = ['relationship', 'client satisfaction', 'timely delivery', 'quality', '24/7 Services'];
-    let currentWordIndex = 0; // Keeps track of the current word
-    let charIndex = 0; // Keeps track of the character index
-    let typingTimeout; // Stores the timeout for typing
+    let currentWordIndex = 0; 
+    let charIndex = 0; 
+    let typingTimeout; 
 
     // Typing Effect Function
     function typeEffect(element) {
         const currentWord = words[currentWordIndex];
 
-        // Add the next character and the custom blinking cursor
+  
         if (charIndex <= currentWord.length) {
             element.innerHTML =
                 currentWord.slice(0, charIndex) + `<span class="cursor">|</span>`;
             charIndex++;
-            typingTimeout = setTimeout(() => typeEffect(element), 200); // Smooth letter-by-letter typing speed
+            typingTimeout = setTimeout(() => typeEffect(element), 200); 
         } else {
-            // Wait before moving to the next word
+           
             setTimeout(() => {
-                charIndex = 0; // Reset character index for the new word
-                currentWordIndex = (currentWordIndex + 1) % words.length; // Loop through words
-                typeEffect(element); // Start typing the next word
-            }, 1000); // Pause before switching to the next word
+                charIndex = 0; 
+                currentWordIndex = (currentWordIndex + 1) % words.length; 
+                typeEffect(element); 
+            }, 1000); 
         }
     }
 
-    // Reset Typing Effect for Slide Transitions
+  
     function resetTypingEffect(element) {
-        clearTimeout(typingTimeout); // Clear any existing timeouts
-        charIndex = 0; // Reset character index
-        element.innerHTML = ''; // Clear text content
-        typeEffect(element); // Restart typing effect
+        clearTimeout(typingTimeout);
+        charIndex = 0;
+        element.innerHTML = ''; 
+        typeEffect(element);
     }
 
-    // Initialize Swiper
+   
     const swiper = new Swiper('.hero-swiper', {
         loop: true,
         autoplay: {
@@ -53,20 +53,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 const typingSection = document.querySelector('.typing-section');
                 const dynamicText = document.querySelector('.dynamic-text');
 
-                // Hide the typing section
+             
                 typingSection.classList.add('hide');
-                resetTypingEffect(dynamicText); // Reset typing effect
+                resetTypingEffect(dynamicText); 
 
-                // Show the typing section after slide transition
+                
                 setTimeout(() => {
                     typingSection.classList.remove('hide');
                     typingSection.classList.add('show');
-                }, 1000); // Delay to sync with slide transition
+                }, 1000);
             },
         },
     });
 
-    // Start typing effect on first load
+   
     const dynamicText = document.querySelector('.dynamic-text');
     typeEffect(dynamicText);
 });
@@ -91,10 +91,11 @@ gsap.from(".hero-swiper .swiper-slide img", {
     }
 });
 
+// Image diveder Slider in index page
 const swiper = new Swiper('.imageSlider', {
-    slidesPerView: 1, // One slide containing two images
-    spaceBetween: 0, // Space between slides
-    loop: true, // Enable infinite loop
+    slidesPerView: 1, 
+    spaceBetween: 0, 
+    loop: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -109,6 +110,7 @@ const swiper = new Swiper('.imageSlider', {
     },
   });
 
+// Index page about content Slider
 var newSwiper = new Swiper('.content-swiper', {
     loop: true,
     autoplay: {
@@ -119,22 +121,24 @@ var newSwiper = new Swiper('.content-swiper', {
     speed: 1200,
     effect: 'slide',
     navigation: {
-        nextEl: '.content-swiper-button-next', // Unique class for next button
-        prevEl: '.content-swiper-button-prev', // Unique class for prev button
+        nextEl: '.content-swiper-button-next',
+        prevEl: '.content-swiper-button-prev',
     },
     pagination: {
-        el: '.content-swiper-pagination', // Unique class for pagination
+        el: '.content-swiper-pagination', 
         clickable: true,
         type: 'bullets',
     },
 });
 
+
+// Gallery page link Slider in index Page
 const imageSwiper = new Swiper('.image-swiper', {
     loop: true,
-    spaceBetween: 0, // Remove gap between slides
+    spaceBetween: 0, 
     navigation: {
-        nextEl: '.image-swiper-button-next', // New arrow class
-        prevEl: '.image-swiper-button-prev', // New arrow class
+        nextEl: '.image-swiper-button-next', 
+        prevEl: '.image-swiper-button-prev', 
     },
     autoplay: {
         delay: 3000, 
@@ -148,23 +152,25 @@ const imageSwiper = new Swiper('.image-swiper', {
     },
 });
 
+
+// Logo Slider
 const logoSwiper = new Swiper('.logo-swiper', {
-    loop: true, // Infinite loop
-    spaceBetween: 20, // Space between slides
-    slidesPerView: 5, // Show 5 slides at a time
+    loop: true, 
+    spaceBetween: 20,
+    slidesPerView: 5, 
     autoplay: {
-        delay: 0, // No delay between slides for continuous scrolling
-        disableOnInteraction: false, // Keep autoplay active even after user interaction
+        delay: 0,
+        disableOnInteraction: false,
     },
-    speed: 3000, // Adjust speed for the scrolling pace (lower = slower, higher = faster)
-    freeMode: true, // Enable continuous scrolling
-    freeModeMomentum: false, // Prevent speed fluctuations for consistent scrolling
+    speed: 3000,
+    freeMode: true,
+    freeModeMomentum: false,
 });
 
 
 
 
-
+// Client Review Slider
 const swiperContainer = document.querySelector('.about-swiper');
 if (swiperContainer) {
   const aboutSwiper = new Swiper('.about-swiper', {
@@ -180,27 +186,6 @@ if (swiperContainer) {
       },
   });
 }
-
-
-// const testimonialSwiper = new Swiper('.testimonial-swiper', {
-//     slidesPerView: 1.5, // Shows part of the adjacent slides
-//     spaceBetween: 20, // Spacing between slides
-//     centeredSlides: true, // Center the active slide
-//     loop: true, // Infinite looping
-//     effect: 'coverflow', // Use coverflow effect
-//     coverflowEffect: {
-//       rotate: 0, // No rotation of slides
-//       stretch: 0, // No stretching
-//       depth: 100, // Depth for 3D effect
-//       modifier: 2.5, // Multiplier for slide scaling
-//       slideShadows: false, // Disable shadows
-//     },
-//     autoplay: {
-//       delay: 3000, // Automatically change slides every 3 seconds
-//       disableOnInteraction: false, // Keep autoplay after user interactions
-//     },
-   
-//   });
   
   
 

@@ -9,15 +9,15 @@ document.querySelectorAll('.faq-question').forEach((question) => {
         answer.style.maxHeight = null;
         answer.classList.remove('active');
   
-        // Delay removing the active class from the question for smooth transition
+        
         setTimeout(() => {
-          question.classList.remove('active'); // Remove active class after answer closes
-        }, 500); // Ensure this time matches the answer's transition duration
+          question.classList.remove('active');
+        }, 500); 
       } else {
         arrow.style.transform = 'rotate(180deg)';
         answer.style.maxHeight = `${answer.scrollHeight}px`;
         answer.classList.add('active');
-        question.classList.add('active'); // Add active class to question immediately
+        question.classList.add('active');
       }
     });
   });
@@ -25,16 +25,16 @@ document.querySelectorAll('.faq-question').forEach((question) => {
 
   $(document).ready(function () {
     $('#example').anyImageComparisonSlider({
-        orientation: 'horizontal',            // Slider orientation
-        initialPosition: 0.5,                 // Start position (50%)
-        width: '100%',                        // Slider width
-        backgroundColor: 'none',              // Background color
-        interactive: true,                    // Enable interaction
-        autoAnimation: true,                  // Enable automatic animation
-        autoAnimationSpeed: 8,                // Speed of animation (adjust as needed)
-        autoAnimationPause: 1,                // Pause between animations (in seconds)
-        autoAnimationEasing: 'inOutCubic',    // Easing function for smooth transition
-        dividingLine: 'solid 2px #000',       // Divider line style
-        cursor: 'ew-resize',                  // Cursor style
+        orientation: 'horizontal',           
+        initialPosition: 0.5,                 
+        width: '100%',                     
+        backgroundColor: 'none',              
+        interactive: true,                   
+        autoAnimation: true,                 
+        autoAnimationSpeed: 8,               
+        autoAnimationPause: 1,                
+        autoAnimationEasing: 'inOutCubic',    
+        dividingLine: 'solid 2px #000',       
+        cursor: 'ew-resize',                  
     });
 });

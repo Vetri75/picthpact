@@ -1,5 +1,3 @@
-
-
 .filters {
     display: flex;
     align-items: center;
@@ -28,9 +26,7 @@
     padding: 150px 60px 30px 60px;
     max-width: 1350px;
     margin: 0 auto;
-    /* visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.5s ease; */
+
 }
 
 .gallery-h1 {
@@ -42,7 +38,7 @@
 .item-grid {
     padding: 0 60px 30px 60px;
 }
-/* Ensure a 3-column layout for larger screens */
+
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -51,7 +47,7 @@
 }
 
 .grid-item {
-    width: calc(33.333% - 10px); /* Default to 3 images per row */
+    width: calc(33.333% - 10px);
     margin-bottom: 15px;
     position: relative;
 }
@@ -64,30 +60,32 @@
 
 .filters button.active {
     color: black;
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.13);/* Apply box shadow to active button */
-    /* Optional: change background color */
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.13);
+
 }
 
 
-/* For screens less than 1000px wide, show 2 images per row */
+
 @media (max-width: 1000px) {
     .grid-item {
-        width: calc(50% - 10px); /* 2 images per row */
+        width: calc(50% - 10px);
     }
 }
 
-/* For screens less than 650px wide, show 1 image per row */
+
 @media (max-width: 650px) {
     .grid-item {
-        width: 100%; /* 1 image per row */
+        width: 100%;
         margin-bottom: 10px;
     }
 }
-@media(max-width:500px){
-    .item-grid{
+
+@media(max-width:500px) {
+    .item-grid {
         padding: 30px 10px;
     }
-    .gallery-sec{
+
+    .gallery-sec {
         padding: 150px 10px 20px 10px !important;
     }
 }
