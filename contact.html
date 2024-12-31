@@ -12,6 +12,9 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
     <link rel="stylesheet" href="modules/css/main.css">
     <link rel="stylesheet" href="modules/css/aboutus.css">
     <link rel="stylesheet" href="modules/css/contact.css">
@@ -262,6 +265,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="country">Country*</label>
+                    <span class="enter-de">Enter your Country</span>
+                    <input type="text" id="country" name="country">
+                </div>
+
+                <div class="error-message-container">
+                    <div id="country-error" class="error-message">This field is required.</div>
+                </div>
+
+                <div class="form-group">
                     <label for="message">Message*</label>
                     <span class="enter-de">Feel free to type any queries or details in the box below.</span>
                     <textarea id="message" name="message"></textarea>
@@ -328,79 +341,98 @@
     <script src="modules/js/about.js"></script>
     <script src="modules/js/main.js"></script>
     <script src="modules/js/slider.js"></script>
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        // Restrict phone input to valid international phone number characters
-        document.getElementById("phone").addEventListener("input", function (event) {
-            // Allow only numbers, +, -, and spaces
-            this.value = this.value.replace(/[^0-9+\- ]/g, "");
+
+        // Restrict phone input to valid characters
+    document.getElementById("phone").addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9+\- ]/g, ""); // Allow only numbers, +, -, and spaces
+    });
+
+    // Phone validation regex (international format)
+    const phoneRegex = /^[+]*[0-9][0-9\s\-]*$/;
+
+    // Email validation regex
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+    // Add input listeners for validation feedback
+    function addInputListener(inputId, errorId) {
+        document.getElementById(inputId).addEventListener("input", function () {
+            document.getElementById(errorId).style.display = this.value ? "none" : "block";
         });
+    }
 
-        // Phone number validation regex (international format)
-        const phoneRegex = /^[+]*[0-9][0-9\s\-]*$/;
+    addInputListener("name", "name-error");
+    addInputListener("message", "message-error");
 
-        // Form validation logic on submit
-        document.getElementById("contact-form").addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent form submission
+    // Form validation and submission logic
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
 
-            // Clear previous error messages
-            const errorMessages = document.querySelectorAll(".error-message");
-            errorMessages.forEach(msg => msg.style.display = "none");
+        // Clear all error messages
+        const errorMessages = document.querySelectorAll(".error-message");
+        errorMessages.forEach(msg => (msg.style.display = "none"));
 
-            let isValid = true;
+        let isValid = true;
 
-            // Name validation
-            const name = document.getElementById("name").value;
-            if (!name) {
-                document.getElementById("name-error").style.display = "block";
-                isValid = false;
-            }
+        // Validate fields
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const country = document.getElementById("country").value.trim();
+        const message = document.getElementById("message").value.trim();
 
-            // Phone validation
-            const phone = document.getElementById("phone").value;
-            if (!phone || !phoneRegex.test(phone)) {
-                document.getElementById("phone-error").style.display = "block";
-                isValid = false;
-            }
-
-            // Custom Email validation
-            const email = document.getElementById("email").value;
-            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-
-            if (!emailRegex.test(email)) {
-                document.getElementById("email-error").style.display = "block";
-                isValid = false;
-            }
-
-            // Message validation
-            const message = document.getElementById("message").value;
-            if (!message) {
-                document.getElementById("message-error").style.display = "block";
-                isValid = false;
-            }
-
-
-            if (isValid) {
-                // Hide the form and show the thank you message
-                document.querySelector(".form-sec").style.display = "none";
-                document.querySelector(".after-sub").style.display = "block";
-            }
-        });
-
-        // Add event listeners to hide the error message when user starts typing (except for email and phone)
-        function addInputListener(inputId, errorId) {
-            document.getElementById(inputId).addEventListener("input", function () {
-                // If the input has a value, hide the error message
-                if (this.value) {
-                    document.getElementById(errorId).style.display = "none";
-                } else {
-                    document.getElementById(errorId).style.display = "block";
-                }
-            });
+        if (!name) {
+            document.getElementById("name-error").style.display = "block";
+            isValid = false;
+        }
+        if (!phone || !phoneRegex.test(phone)) {
+            document.getElementById("phone-error").style.display = "block";
+            isValid = false;
+        }
+        if (!emailRegex.test(email)) {
+            document.getElementById("email-error").style.display = "block";
+            isValid = false;
+        }
+        if (!country) {
+            document.getElementById("country-error").style.display = "block";
+            isValid = false;
+        }
+        if (!message) {
+            document.getElementById("message-error").style.display = "block";
+            isValid = false;
         }
 
-        // Attach input listeners to fields (skip email and phone)
-        addInputListener("name", "name-error");
-        addInputListener("message", "message-error");
+        if (isValid) {
+            // Integrate EmailJS for email sending
+            emailjs.init("WCv90IqTZ3ZhATz4v"); // Replace with your EmailJS user ID
+
+            const serviceID = "service_r51ksqa"; // Replace with your EmailJS service ID
+            const templateID = "template_hlgrqoa"; // Replace with your EmailJS template ID
+
+            emailjs
+                .send(serviceID, templateID, {
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    country: country,
+                    message: message,
+                })
+                .then(
+                    function (response) {
+                        alert("Message sent successfully!");
+                        document.getElementById("contact-form").reset(); // Clear the form
+                        document.querySelector(".form-sec").style.display = "none";
+                        document.querySelector(".after-sub").style.display = "block";
+                    },
+                    function (error) {
+                        console.log("FAILED...", error);
+                        alert("Message sending failed. Please try again.");
+                    }
+                );
+        }
+    });
+
     </script>
 
 </body>
