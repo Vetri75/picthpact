@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const words = ['relationship', 'client satisfaction', 'timely delivery', 'quality', '24/7 Services'];
+    const words = ['relationship.', 'client satisfaction.', 'timely delivery.', 'quality.', '24/7 Services.'];
     let currentWordIndex = 0; 
     let charIndex = 0; 
     let typingTimeout; 
